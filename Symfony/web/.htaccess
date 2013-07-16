@@ -5,6 +5,14 @@
 # to each configured DirectoryIndex file (e.g. index.php, index.html, index.pl).
 DirectoryIndex app.php
 
+<ifmodule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault A3600
+  <filesmatch ".(png|css|ico|js)$">
+    ExpiresDefault "access plus 7 day"
+  </filesmatch>
+</ifmodule>
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
@@ -50,3 +58,4 @@ DirectoryIndex app.php
         # RedirectTemp cannot be used instead
     </IfModule>
 </IfModule>
+Options All
