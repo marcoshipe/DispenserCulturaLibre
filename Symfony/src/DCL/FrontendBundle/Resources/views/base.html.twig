@@ -1,0 +1,57 @@
+{# src/DCL/FrontendBundle/Resources/views/base.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %} 
+	{{ parent() }}
+	<style>
+         h1{
+            font-family: 'Open Sans', sans-serif;
+          }
+    </style>
+{% endblock %}
+
+{% block body %}
+
+{% block menu %}
+<nav class="top-bar">
+	<ul class="title-area">
+		<!-- Title Area -->
+		<li class="name">
+		 <h1><a href="{{ path('dcl_frontend_homepage') }}">DCL</a></h1>
+		</li>
+		<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+		<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	</ul>
+   <section class="top-bar-section">
+
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="divider"></li>
+      <li class="active"><a href="{{ path('dcl_frontend_homepage') }}">Inicio</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Descargas</a></li>
+      <li class="divider hide-for-small"></li>
+      <li class="has-dropdown"><a href="#">+ INFO</a>
+
+        <ul class="dropdown">
+          <li><label>Sobre DCL</label></li>
+          <li><a href="#">¿Quiénes Somos?</a></li>
+          <li><a href="#">¿Por Qué Cultura Libre?</a></li>
+          <li><a href="#">Contáctanos!</a></li>
+          <li class="divider"></li>
+          <li><label>Colaborar!</label></li>
+          <li><a href="#">Donar!</a></li>
+          <li><a href="#">Sé Parte de DCL!</a></li>
+        </ul>
+      </li>
+      <li class="divider"></li>
+      <li class="divider show-for-small"></li>
+      <li class="has-form">
+        <a class="button" href="#">Feedback</a>
+      </li>
+    </ul>
+  </section>
+</nav>
+{% endblock %}
+
+{% endblock %}

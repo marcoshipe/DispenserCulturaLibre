@@ -1,0 +1,3 @@
+dcl_frontend_homepage:
+    pattern:  /
+    defaults: { _controller: DCLFrontendBundle:Client:index }

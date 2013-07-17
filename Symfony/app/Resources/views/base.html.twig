@@ -1,13 +1,47 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{% block title %}Dispenser Cultura Libre{% endblock %}</title>
+   {% block stylesheets %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+        <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/foundation.min.css') }}">
+    {% endblock %}
+</head>
+<body>
+    {% block body %} {% endblock %}
+
+    {% block javascripts %}
+        <script>
+        window.jQuery ||
+        document.write(
+        '<script src=' + ('__proto__' in {} ? '{{ asset("js/vendor/zepto") }}' : '{{ asset("js/vendor/jquery") }}') +'.js><\/script>'
+        )
+        </script>
+        <script src="{{ asset('js/foundation/foundation.js') }}"></script>
+        <!--<script src="{{ asset('js/foundation/alerts.js') }}"></script>
+        <script src="{{ asset('js/foundation/clearing.js') }}"></script>
+        <script src="{{ asset('js/foundation/foundation.alerts.js') }}"></script>
+        <script src="{{ asset('js/foundation/foundation.clearing.js') }}"></script>
+        <script src="{{ asset('js/foundation/foundation.cookie.js') }}"></script>-->
+        <script src="{{ asset('js/foundation/foundation.dropdown.js') }}"></script>
+         <!--<script src="{{ asset('js/foundation/foundation.forms.js') }}"></script>
+        <script src="{{ asset('js/foundation/foundation.joyride.js') }}"></script>
+        <script src="{{ asset('js/foundation/foundation.magellan.js') }}"></script>
+        <script src="{{ asset('js/foundation/foundation.orbit.js') }}"></script>
+        <script src="{{ asset('js/foundation/foundation.placeholder.js') }}"></script>
+        <script src="{{ asset('js/foundation/foundation.reveal.js') }}"></script>
+        <script src="{{ asset('js/foundation/foundation.section.js') }}"></script>
+        <script src="{{ asset('js/foundation/foundation.tooltips.js') }}"></script>-->
+        <script src="{{ asset('js/foundation/foundation.topbar.js') }}"></script>
+        <!--<script src="{{ asset('js/foundation/foundation.interchange.js') }}"></script>-->
+        <script>
+            $(document).foundation();
+        </script>
+    {% endblock %}
+</body>
 </html>

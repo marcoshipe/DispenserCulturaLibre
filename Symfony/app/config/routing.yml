@@ -1,0 +1,3 @@
+frontend:
+    resource: "@DCLFrontendBundle/Resources/config/routing.yml"
+    prefix:   /
